@@ -113,7 +113,7 @@ async function sendReport(
   await api.sendMessage(chatId, "Збираю звіт…", { reply_markup: menu }).catch(() => undefined);
   try {
     const data = await loadReport(client, config.webPropertyId, config.appPropertyId, range);
-    await api.sendMessage(chatId, formatReport(data), { reply_markup: menu });
+    await api.sendMessage(chatId, formatReport(data), { reply_markup: menu, parse_mode: "HTML" });
   } catch (error) {
     console.error("report", error instanceof Error ? error.message : error);
     await api
