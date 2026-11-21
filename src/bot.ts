@@ -24,7 +24,7 @@ export function createBot(config: Config): Bot {
       await ctx.reply(denied(config, userId), { reply_markup: menu });
       return;
     }
-    await ctx.reply("Щодня о 9:30 ви отримуватимете звіт за попередній день. Щоб переглянути дані за інший період, скористайтеся кнопками нижче.", {
+    await ctx.reply("Щоденний звіт приходить о 9:30 за вчора. Кнопки знизу: вчора або свій період.", {
       reply_markup: menu,
     });
   });
